@@ -10,8 +10,6 @@
 */
 
 
-import javafx.concurrent.Task;
-
 import java.io.*;
 import java.util.*;
 
@@ -19,10 +17,10 @@ import java.util.*;
 public class NiceSimulator {
     public static final int SIMULATE_IDLE = -2;
     public static final int SIMULATE_NONE_FINISHED = -1;
-    LinkedList<TaskNode> my_shitty_heap;
-    public static int tasks_left;
-    public static int max_tasks;
-
+    public int tasks_left;
+    public int max_tasks;
+    public TaskNode head;
+    public TaskNode tail;
 
     /* Constructor(maxTasks)
        Instantiate the data structure with the provided maximum
@@ -32,9 +30,8 @@ public class NiceSimulator {
          0, 1, ..., maxTasks - 1
     */
     public NiceSimulator(int maxTasks){
-        my_shitty_heap = new LinkedList<TaskNode>();
+        this.max_tasks = maxTasks;
         tasks_left = maxTasks;
-        max_tasks = maxTasks;
     }
 
     /* taskValid(taskID)
@@ -48,7 +45,12 @@ public class NiceSimulator {
 
     */
     public boolean taskValid(int taskID){
-        return my_shitty_heap.contains(TaskNode.task_id = taskID);
+        TaskNode currNode = head;
+        if (taskID < currNode.getTaskId()) return false;
+        while (currNode.next != null) {
+            if (currNode.getTaskId() == taskID) return true;
+        }
+        return false;
     }
 
     /* getPriority(taskID)
@@ -58,12 +60,9 @@ public class NiceSimulator {
 
     */
     public int getPriority(int taskID){
-        int idx;
-        TaskNode currNode;
-        idx = my_shitty_heap.indexOf(TaskNode.task_id=taskID);
-        currNode = my_shitty_heap.get(idx);
 
-        return currNode.priority;
+
+        return -1;
 
     }
 
@@ -74,15 +73,18 @@ public class NiceSimulator {
 
     */
     public int getRemaining(int taskID){
-        TaskNode currNode;
-        int idx;
-        idx = my_shitty_heap.indexOf(TaskNode.task_id=taskID);
-        currNode = my_shitty_heap.get(idx);
 
-        return currNode.steps_remaining;
+
+        return -1;
     }
 
+    /*
+        sortList()
+        helper method to arrange data structure in priority order
+        followed by taskID. 
+     */
 
+    
     /* add(taskID, time_required)
        Add a task with the provided task ID and time requirement
        to the system. You may assume that the provided task ID is in
@@ -90,8 +92,7 @@ public class NiceSimulator {
        The new task will be assigned nice level 0.
     */
     public void add(int taskID, int time_required){
-        TaskNode new_node = new TaskNode(taskID, time_required);
-        my_shitty_heap.add(new_node);
+
     }
 
 
@@ -101,10 +102,7 @@ public class NiceSimulator {
        range and is a currently-active task.
     */
     public void kill(int taskID){
-        TaskNode currNode;
-        int idx;
-        idx = my_shitty_heap.indexOf(TaskNode.task_id=taskID);
-        my_shitty_heap.remove(idx);
+
     }
 
 
@@ -116,11 +114,7 @@ public class NiceSimulator {
 
     */
     public void renice(int taskID, int new_priority){
-        TaskNode currNode;
-        int idx;
-        idx = my_shitty_heap.indexOf(TaskNode.task_id=taskID);
-        currNode = my_shitty_heap.get(idx);
-        currNode.priority = new_priority;
+
     }
 
 
@@ -138,33 +132,6 @@ public class NiceSimulator {
          - If the task did not finish, return SIMULATE_NONE_FINISHED.
     */
     public int simulate(){
-        TaskNode curr_task;
-        if (my_shitty_heap.size() == 0) {
-            return SIMULATE_IDLE;
-        } else {
-
-            // maybe I should ensure list is sorted
-            // sort array list by priority (first element is now the lowest priority
-            // Taken from https://stackoverflow.com/questions/4066538/sort-an-arraylist-based-on-an-object-field
-            Collections.sort(my_shitty_heap, new Comparator<TaskNode>(){
-                public int compare(TaskNode o1, TaskNode o2){
-                    if(o1.priority == o2.priority)
-                        return 0;
-                    return o1.priority < o2.priority ? -1 : 1;
-                }
-            });
-            // get low priority node (still need to secondary sort by task number
-            curr_task = my_shitty_heap.get(0);
-
-            // decrease time requirement by one
-            curr_task.decrementTimeStep();
-
-            // check to see if steps_remaining = 0
-            if (curr_task.steps_remaining == 0) {
-                return curr_task.task_id;
-            } else {
-                return SIMULATE_NONE_FINISHED;
-            }
-        }
+        return SIMULATE_NONE_FINISHED;
     }
 }
