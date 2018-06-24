@@ -51,12 +51,18 @@ public class NiceSimulator {
     */
     public boolean taskValid(int taskID){
         if (size == 0) return false;
+
         TaskNode curr = head;
+
         if (taskID < curr.getTaskId()) return false;
+
+        if (taskID == curr.getTaskId()) return true;
+
         while (curr.next != null) {
             if (curr.getTaskId() == taskID) return true;
             curr = curr.next;
         }
+
         return false;
     }
 
@@ -68,6 +74,8 @@ public class NiceSimulator {
     */
     public int getPriority(int taskID){
         TaskNode curr = head;
+        if (curr.getTaskId() == taskID) return curr.getPriority();
+
         while (curr.next != null) {
             if (curr.getTaskId() == taskID) return curr.getPriority();
             curr = curr.next;
@@ -216,9 +224,36 @@ public class NiceSimulator {
 
     */
     public void renice(int taskID, int new_priority){
+        TaskNode curr = head;
+        if (curr.getTaskId() == taskID) curr.setPriority(new_priority);
 
+        else {
+            while (curr.next != null) {
+                if (curr.getTaskId() == taskID) {
+                    curr.setPriority(new_priority);
+                    return;
+                }
+            }
+        }
     }
 
+    /*getLowestPriority()
+        helper method to get node with lowest priority and give
+        it to simulate()
+     */
+
+    private TaskNode getLowestPriority() {
+        TaskNode lowest = head;
+        TaskNode curr = head;
+
+        while (curr.next != null) {
+            if (curr.next.getPriority() < lowest.getPriority()) lowest = curr.next;
+
+            curr = curr.next;
+        }
+
+        return lowest;
+    }
 
     /* simulate()
        Run one step of the simulation:
@@ -234,6 +269,8 @@ public class NiceSimulator {
          - If the task did not finish, return SIMULATE_NONE_FINISHED.
     */
     public int simulate(){
+        if (size == 0) return SIMULATE_IDLE;
+
         return SIMULATE_NONE_FINISHED;
     }
 }

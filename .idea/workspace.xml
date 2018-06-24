@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c74ed151-214c-4128-9e4f-6519ef0cca4c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/NiceSimulator.java" afterPath="$PROJECT_DIR$/src/NiceSimulator.java" />
-      <change beforePath="$PROJECT_DIR$/src/TaskNode.java" afterPath="$PROJECT_DIR$/src/TaskNode.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,13 +30,11 @@
       <file leaf-file-name="NiceSimulator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NiceSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="206" column="24" lean-forward="false" selection-start-line="206" selection-start-column="24" selection-end-line="206" selection-end-column="24" />
+            <state relative-caret-position="459">
+              <caret line="254" column="22" lean-forward="false" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
               <folding>
-                <element signature="e#0#6759#0" expanded="true" />
+                <element signature="e#0#7681#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#6710#6711#0" expanded="true" />
-                <element signature="e#6755#6756#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -289,12 +286,12 @@
       <workItem from="1529606203040" duration="6359000" />
       <workItem from="1529688985803" duration="12320000" />
       <workItem from="1529777938119" duration="442000" />
-      <workItem from="1529867540442" duration="8785000" />
+      <workItem from="1529867540442" duration="9500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27906000" />
+    <option name="totallyTimeSpent" value="28621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="754" extended-state="0" />
@@ -383,7 +380,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/NiceSimulator.java</url>
-          <line>117</line>
+          <line>125</line>
           <properties class="NiceSimulator" method="add">
             <option name="EMULATED" value="true" />
           </properties>
@@ -411,10 +408,8 @@
         <state relative-caret-position="850">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6759#0" expanded="true" />
+            <element signature="e#0#7681#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#6710#6711#0" expanded="true" />
-            <element signature="e#6755#6756#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -462,10 +457,8 @@
         <state relative-caret-position="850">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6759#0" expanded="true" />
+            <element signature="e#0#7681#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#6710#6711#0" expanded="true" />
-            <element signature="e#6755#6756#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -542,10 +535,8 @@
         <state relative-caret-position="1037">
           <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding>
-            <element signature="e#0#6759#0" expanded="true" />
+            <element signature="e#0#7681#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#6710#6711#0" expanded="true" />
-            <element signature="e#6755#6756#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -605,13 +596,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NiceSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="206" column="24" lean-forward="false" selection-start-line="206" selection-start-column="24" selection-end-line="206" selection-end-column="24" />
+        <state relative-caret-position="459">
+          <caret line="254" column="22" lean-forward="false" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
           <folding>
-            <element signature="e#0#6759#0" expanded="true" />
+            <element signature="e#0#7681#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#6710#6711#0" expanded="true" />
-            <element signature="e#6755#6756#0" expanded="true" />
           </folding>
         </state>
       </provider>
