@@ -271,6 +271,10 @@ public class NiceSimulator {
     public int simulate(){
         if (size == 0) return SIMULATE_IDLE;
 
+        TaskNode currTask = getLowestPriority();
+        currTask.decrementTimeStep();
+        if (currTask.getStepsRemaining() == 0) return currTask.getTaskId();
+        
         return SIMULATE_NONE_FINISHED;
     }
 }

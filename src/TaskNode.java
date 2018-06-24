@@ -28,7 +28,7 @@ public class TaskNode {
     }
 
     public void decrementTimeStep() {
-        --steps_remaining;
+        steps_remaining = steps_remaining - 1;
     }
 
 }

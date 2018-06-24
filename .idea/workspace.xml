@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c74ed151-214c-4128-9e4f-6519ef0cca4c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/NiceSimulator.java" afterPath="$PROJECT_DIR$/src/NiceSimulator.java" />
+      <change beforePath="$PROJECT_DIR$/src/TaskNode.java" afterPath="$PROJECT_DIR$/src/TaskNode.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,10 +31,10 @@
       <file leaf-file-name="NiceSimulator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NiceSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="254" column="22" lean-forward="false" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
+            <state relative-caret-position="442">
+              <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
               <folding>
-                <element signature="e#0#7681#0" expanded="true" />
+                <element signature="e#0#7853#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -43,8 +44,8 @@
       <file leaf-file-name="TaskNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TaskNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="510">
+              <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
               <folding>
                 <element signature="e#348#349#0" expanded="true" />
                 <element signature="e#378#379#0" expanded="true" />
@@ -55,7 +56,7 @@
                 <element signature="e#565#566#0" expanded="true" />
                 <element signature="e#604#605#0" expanded="true" />
                 <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -286,12 +287,12 @@
       <workItem from="1529606203040" duration="6359000" />
       <workItem from="1529688985803" duration="12320000" />
       <workItem from="1529777938119" duration="442000" />
-      <workItem from="1529867540442" duration="9500000" />
+      <workItem from="1529867540442" duration="9864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28621000" />
+    <option name="totallyTimeSpent" value="28985000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="754" extended-state="0" />
@@ -408,7 +409,7 @@
         <state relative-caret-position="850">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#7681#0" expanded="true" />
+            <element signature="e#0#7853#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -436,7 +437,7 @@
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
             <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -457,7 +458,7 @@
         <state relative-caret-position="850">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#7681#0" expanded="true" />
+            <element signature="e#0#7853#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -485,7 +486,7 @@
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
             <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -517,7 +518,7 @@
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
             <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -535,7 +536,7 @@
         <state relative-caret-position="1037">
           <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding>
-            <element signature="e#0#7681#0" expanded="true" />
+            <element signature="e#0#7853#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -564,25 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TaskNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding>
-            <element signature="e#348#349#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Nice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -594,12 +576,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TaskNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/NiceSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="254" column="22" lean-forward="false" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
+        <state relative-caret-position="442">
+          <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
           <folding>
-            <element signature="e#0#7681#0" expanded="true" />
+            <element signature="e#0#7853#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
