@@ -19,6 +19,10 @@ public class TaskNode {
     public int getPriority() {
         return priority;
     }
+
+    public int getStepsRemaining() {
+        return steps_remaining;
+    }
     public void setPriority(int new_priority) {
         priority = new_priority;
     }
@@ -26,4 +30,5 @@ public class TaskNode {
     public void decrementTimeStep() {
         --steps_remaining;
     }
+
 }

@@ -10,6 +10,8 @@
 */
 
 
+import javafx.concurrent.Task;
+
 import java.io.*;
 import java.util.*;
 
@@ -19,6 +21,7 @@ public class NiceSimulator {
     public static final int SIMULATE_NONE_FINISHED = -1;
     public int tasks_left;
     public int max_tasks;
+    private int size;
     public TaskNode head;
     public TaskNode tail;
 
@@ -32,7 +35,9 @@ public class NiceSimulator {
     public NiceSimulator(int maxTasks){
         this.max_tasks = maxTasks;
         tasks_left = maxTasks;
+        size = 0;
     }
+    
 
     /* taskValid(taskID)
        Given a task ID, return true if the ID is currently
@@ -45,10 +50,12 @@ public class NiceSimulator {
 
     */
     public boolean taskValid(int taskID){
-        TaskNode currNode = head;
-        if (taskID < currNode.getTaskId()) return false;
-        while (currNode.next != null) {
-            if (currNode.getTaskId() == taskID) return true;
+        if (size == 0) return false;
+        TaskNode curr = head;
+        if (taskID < curr.getTaskId()) return false;
+        while (curr.next != null) {
+            if (curr.getTaskId() == taskID) return true;
+            curr = curr.next;
         }
         return false;
     }
@@ -60,7 +67,11 @@ public class NiceSimulator {
 
     */
     public int getPriority(int taskID){
-
+        TaskNode curr = head;
+        while (curr.next != null) {
+            if (curr.getTaskId() == taskID) return curr.getPriority();
+            curr = curr.next;
+        }
 
         return -1;
 
@@ -73,17 +84,36 @@ public class NiceSimulator {
 
     */
     public int getRemaining(int taskID){
-
+        TaskNode curr = head;
+        while (curr.next != null) {
+            if (curr.getTaskId() == taskID) return curr.getStepsRemaining();
+            curr = curr.next;
+        }
 
         return -1;
     }
 
     /*
-        sortList()
-        helper method to arrange data structure in priority order
-        followed by taskID. 
+        getCorrectPreviousNode(task_id)
+
+        Helper method for finding the correct place to insert a new
+        TaskNode
      */
 
+    private TaskNode getCorrectPreviousNode(int task_id) {
+        if (task_id > tail.getTaskId()) return tail;
+
+        TaskNode curr = head;
+        if (task_id < curr.getTaskId()) return null;
+
+        while (curr.next != null) {
+            if (task_id < curr.next.getTaskId()) return curr;
+            curr = curr.next;
+        }
+        
+        // shouldn't get here
+        return null;
+    }
     
     /* add(taskID, time_required)
        Add a task with the provided task ID and time requirement
@@ -92,9 +122,54 @@ public class NiceSimulator {
        The new task will be assigned nice level 0.
     */
     public void add(int taskID, int time_required){
+        TaskNode newNode = new TaskNode(taskID, time_required);
+        TaskNode curr = head;
 
+        if (size == 0) {
+            head = newNode;
+            tail = newNode;
+            size++;
+            return;
+        }
+
+        if (size == 1) {
+            if (taskID < curr.getTaskId()) {
+                curr.prev = newNode;
+                head = newNode;
+
+            } else {
+                curr.next = newNode;
+                tail = newNode;
+
+            }
+
+            size++;
+            return;
+        }
+
+        TaskNode nodeBefore = getCorrectPreviousNode(taskID);
+
+        if (nodeBefore == null) {
+            head.prev = newNode;
+            newNode.next = head;
+            head = newNode;
+
+
+        } else if (nodeBefore.next == null) {
+            newNode.prev = nodeBefore;
+            nodeBefore.next = newNode;
+            tail = newNode;
+
+        } else {
+            TaskNode nextNode = nodeBefore.next;
+            nodeBefore.next = newNode;
+            newNode.prev = nodeBefore;
+            nextNode.prev = newNode;
+            newNode.next = nextNode;
+        }
+
+        size++;
     }
-
 
     /* kill(taskID)
        Delete the task with the provided task ID from the system.
@@ -102,7 +177,34 @@ public class NiceSimulator {
        range and is a currently-active task.
     */
     public void kill(int taskID){
+        TaskNode curr = head;
+        
+        if (size == 1) {
+            head = null;
+            tail = null;
+            
+        } else if (taskID == head.getTaskId()) {
+            head = head.next;
+            curr.next = null;
+            head.prev = null;
+            
+        } else if (taskID == tail.getTaskId()) {
+            curr = tail.prev;
+            tail.prev = null;
+            curr.next = null;
+            tail = curr;
+            
+        } else {
+            TaskNode prev = getCorrectPreviousNode(taskID);
+            curr = prev.next;
+            TaskNode next = curr.next;
+            curr.next = null;
+            curr.prev = null;
+            prev.next = next;
+            next.prev = prev;
+        }
 
+        size = size - 1;
     }
 
 

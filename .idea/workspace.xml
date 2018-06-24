@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c74ed151-214c-4128-9e4f-6519ef0cca4c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Tree.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_assignment_2/Nice$NiceOpAdd.class" afterPath="$PROJECT_DIR$/out/production/prog_assignment_2/Nice$NiceOpAdd.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_assignment_2/Nice$NiceOpKill.class" afterPath="$PROJECT_DIR$/out/production/prog_assignment_2/Nice$NiceOpKill.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_assignment_2/Nice$NiceOpRenice.class" afterPath="$PROJECT_DIR$/out/production/prog_assignment_2/Nice$NiceOpRenice.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_assignment_2/Nice.class" afterPath="$PROJECT_DIR$/out/production/prog_assignment_2/Nice.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_assignment_2/NiceSimulator$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_assignment_2/NiceSimulator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_assignment_2/TaskNode.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Nice.java" afterPath="$PROJECT_DIR$/src/Nice.java" />
       <change beforePath="$PROJECT_DIR$/src/NiceSimulator.java" afterPath="$PROJECT_DIR$/src/NiceSimulator.java" />
       <change beforePath="$PROJECT_DIR$/src/TaskNode.java" afterPath="$PROJECT_DIR$/src/TaskNode.java" />
     </list>
@@ -29,8 +18,8 @@
       <file leaf-file-name="Nice.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Nice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding>
                 <element signature="e#0#8498#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -42,13 +31,13 @@
       <file leaf-file-name="NiceSimulator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NiceSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="52" column="20" lean-forward="false" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+            <state relative-caret-position="276">
+              <caret line="206" column="24" lean-forward="false" selection-start-line="206" selection-start-column="24" selection-end-line="206" selection-end-column="24" />
               <folding>
-                <element signature="e#0#3990#0" expanded="true" />
+                <element signature="e#0#6759#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#3941#3942#0" expanded="true" />
-                <element signature="e#3986#3987#0" expanded="true" />
+                <element signature="e#6710#6711#0" expanded="true" />
+                <element signature="e#6755#6756#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,17 +46,19 @@
       <file leaf-file-name="TaskNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TaskNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="391">
+              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
               <folding>
                 <element signature="e#348#349#0" expanded="true" />
                 <element signature="e#378#379#0" expanded="true" />
                 <element signature="e#410#411#0" expanded="true" />
                 <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
+                <element signature="e#479#480#0" expanded="true" />
+                <element signature="e#517#518#0" expanded="true" />
+                <element signature="e#565#566#0" expanded="true" />
+                <element signature="e#604#605#0" expanded="true" />
+                <element signature="e#643#644#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,12 +92,20 @@
       <find>.key</find>
       <find>key</find>
       <find>Person</find>
+      <find>N</find>
+      <find>value</find>
+      <find>currNode</find>
+      <find>findCorrectPreviousNode</find>
     </findStrings>
     <replaceStrings>
       <replace>priority</replace>
       <replace>.task_id</replace>
       <replace>task_id</replace>
       <replace>TaskNode</replace>
+      <replace>getTaskId</replace>
+      <replace>getTaskId()</replace>
+      <replace>curr</replace>
+      <replace>getCorrectPreviousNode</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -290,12 +289,12 @@
       <workItem from="1529606203040" duration="6359000" />
       <workItem from="1529688985803" duration="12320000" />
       <workItem from="1529777938119" duration="442000" />
-      <workItem from="1529867540442" duration="1500000" />
+      <workItem from="1529867540442" duration="8785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20621000" />
+    <option name="totallyTimeSpent" value="27906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="754" extended-state="0" />
@@ -315,7 +314,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875606" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32390952" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -360,24 +359,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>201</line>
-          <properties />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>202</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>203</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
           <line>69</line>
           <properties />
           <option name="timeStamp" value="25" />
@@ -402,7 +383,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/NiceSimulator.java</url>
-          <line>93</line>
+          <line>117</line>
           <properties class="NiceSimulator" method="add">
             <option name="EMULATED" value="true" />
           </properties>
@@ -430,10 +411,10 @@
         <state relative-caret-position="850">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#3990#0" expanded="true" />
+            <element signature="e#0#6759#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#3941#3942#0" expanded="true" />
-            <element signature="e#3986#3987#0" expanded="true" />
+            <element signature="e#6710#6711#0" expanded="true" />
+            <element signature="e#6755#6756#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -455,10 +436,12 @@
             <element signature="e#378#379#0" expanded="true" />
             <element signature="e#410#411#0" expanded="true" />
             <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -479,10 +462,10 @@
         <state relative-caret-position="850">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#3990#0" expanded="true" />
+            <element signature="e#0#6759#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#3941#3942#0" expanded="true" />
-            <element signature="e#3986#3987#0" expanded="true" />
+            <element signature="e#6710#6711#0" expanded="true" />
+            <element signature="e#6755#6756#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -504,10 +487,12 @@
             <element signature="e#378#379#0" expanded="true" />
             <element signature="e#410#411#0" expanded="true" />
             <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -534,10 +519,12 @@
             <element signature="e#378#379#0" expanded="true" />
             <element signature="e#410#411#0" expanded="true" />
             <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -555,10 +542,10 @@
         <state relative-caret-position="1037">
           <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding>
-            <element signature="e#0#3990#0" expanded="true" />
+            <element signature="e#0#6759#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#3941#3942#0" expanded="true" />
-            <element signature="e#3986#3987#0" expanded="true" />
+            <element signature="e#6710#6711#0" expanded="true" />
+            <element signature="e#6755#6756#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -586,10 +573,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TaskNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding>
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Nice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
             <element signature="e#0#8498#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -597,32 +603,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TaskNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding>
-            <element signature="e#348#349#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NiceSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="52" column="20" lean-forward="false" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+        <state relative-caret-position="276">
+          <caret line="206" column="24" lean-forward="false" selection-start-line="206" selection-start-column="24" selection-end-line="206" selection-end-column="24" />
           <folding>
-            <element signature="e#0#3990#0" expanded="true" />
+            <element signature="e#0#6759#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#3941#3942#0" expanded="true" />
-            <element signature="e#3986#3987#0" expanded="true" />
+            <element signature="e#6710#6711#0" expanded="true" />
+            <element signature="e#6755#6756#0" expanded="true" />
           </folding>
         </state>
       </provider>
