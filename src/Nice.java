@@ -37,7 +37,6 @@ public class Nice {
             }
             System.out.printf("Time %d: Adding task %d (time remaining %d)\n", timestep, task_id, time_allocation);
             sim.add(task_id, time_allocation);
-            String DEBUG = "what the fuck!";
         }
         private int task_id;
         private int time_allocation;

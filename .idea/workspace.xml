@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c74ed151-214c-4128-9e4f-6519ef0cca4c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Nice.java" afterPath="$PROJECT_DIR$/src/Nice.java" />
       <change beforePath="$PROJECT_DIR$/src/NiceSimulator.java" afterPath="$PROJECT_DIR$/src/NiceSimulator.java" />
-      <change beforePath="$PROJECT_DIR$/src/TaskNode.java" afterPath="$PROJECT_DIR$/src/TaskNode.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,10 +18,10 @@
       <file leaf-file-name="Nice.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Nice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
               <folding>
-                <element signature="e#0#8498#0" expanded="true" />
+                <element signature="e#0#8453#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -31,10 +31,10 @@
       <file leaf-file-name="NiceSimulator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NiceSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
+            <state relative-caret-position="328">
+              <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
               <folding>
-                <element signature="e#0#7853#0" expanded="true" />
+                <element signature="e#0#8149#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -44,8 +44,8 @@
       <file leaf-file-name="TaskNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TaskNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+            <state relative-caret-position="442">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#348#349#0" expanded="true" />
                 <element signature="e#378#379#0" expanded="true" />
@@ -55,7 +55,6 @@
                 <element signature="e#517#518#0" expanded="true" />
                 <element signature="e#565#566#0" expanded="true" />
                 <element signature="e#604#605#0" expanded="true" />
-                <element signature="e#643#644#0" expanded="true" />
                 <element signature="e#696#697#0" expanded="true" />
               </folding>
             </state>
@@ -113,8 +112,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/HeapPractice.java" />
-        <option value="$PROJECT_DIR$/src/Nice.java" />
         <option value="$PROJECT_DIR$/src/TaskNode.java" />
+        <option value="$PROJECT_DIR$/src/Nice.java" />
         <option value="$PROJECT_DIR$/src/NiceSimulator.java" />
       </list>
     </option>
@@ -287,12 +286,12 @@
       <workItem from="1529606203040" duration="6359000" />
       <workItem from="1529688985803" duration="12320000" />
       <workItem from="1529777938119" duration="442000" />
-      <workItem from="1529867540442" duration="9864000" />
+      <workItem from="1529867540442" duration="14468000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28985000" />
+    <option name="totallyTimeSpent" value="33589000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="754" extended-state="0" />
@@ -312,7 +311,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32390952" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44022617" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -339,58 +338,65 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>195</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>200</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>206</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>69</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Nice.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+          <condition expression="size == 3" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/NiceSimulator.java</url>
-          <line>125</line>
-          <properties class="NiceSimulator" method="add">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="27" />
+          <line>134</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TaskNode.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TaskNode.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/NiceSimulator.java</url>
+          <line>291</line>
+          <properties />
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/NiceSimulator.java</url>
+          <line>285</line>
+          <properties />
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Nice.java</url>
+          <line>213</line>
+          <properties />
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>size == 3</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>size = 3</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Nice.java">
@@ -398,7 +404,7 @@
         <state relative-caret-position="510">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="e#0#8498#0" expanded="true" />
+            <element signature="e#0#8453#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -409,7 +415,7 @@
         <state relative-caret-position="850">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#7853#0" expanded="true" />
+            <element signature="e#0#8149#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -436,7 +442,6 @@
             <element signature="e#517#518#0" expanded="true" />
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
             <element signature="e#696#697#0" expanded="true" />
           </folding>
         </state>
@@ -447,7 +452,7 @@
         <state relative-caret-position="510">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="e#0#8498#0" expanded="true" />
+            <element signature="e#0#8453#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -458,7 +463,7 @@
         <state relative-caret-position="850">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#0#7853#0" expanded="true" />
+            <element signature="e#0#8149#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -485,7 +490,6 @@
             <element signature="e#517#518#0" expanded="true" />
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
             <element signature="e#696#697#0" expanded="true" />
           </folding>
         </state>
@@ -496,7 +500,7 @@
         <state relative-caret-position="1326">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
-            <element signature="e#0#8498#0" expanded="true" />
+            <element signature="e#0#8453#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -517,7 +521,6 @@
             <element signature="e#517#518#0" expanded="true" />
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
             <element signature="e#696#697#0" expanded="true" />
           </folding>
         </state>
@@ -536,7 +539,7 @@
         <state relative-caret-position="1037">
           <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding>
-            <element signature="e#0#7853#0" expanded="true" />
+            <element signature="e#0#8149#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -550,6 +553,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -558,28 +568,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Nice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#8498#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TaskNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+        <state relative-caret-position="442">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#348#349#0" expanded="true" />
             <element signature="e#378#379#0" expanded="true" />
@@ -589,18 +581,28 @@
             <element signature="e#517#518#0" expanded="true" />
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
             <element signature="e#696#697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Nice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#8453#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NiceSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
+        <state relative-caret-position="328">
+          <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
           <folding>
-            <element signature="e#0#7853#0" expanded="true" />
+            <element signature="e#0#8149#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

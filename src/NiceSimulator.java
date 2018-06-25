@@ -19,8 +19,8 @@ import java.util.*;
 public class NiceSimulator {
     public static final int SIMULATE_IDLE = -2;
     public static final int SIMULATE_NONE_FINISHED = -1;
-    public int tasks_left;
     public int max_tasks;
+    public int curr_time_step;
     private int size;
     public TaskNode head;
     public TaskNode tail;
@@ -34,7 +34,7 @@ public class NiceSimulator {
     */
     public NiceSimulator(int maxTasks){
         this.max_tasks = maxTasks;
-        tasks_left = maxTasks;
+        curr_time_step = 0;
         size = 0;
     }
     
@@ -51,6 +51,7 @@ public class NiceSimulator {
     */
     public boolean taskValid(int taskID){
         if (size == 0) return false;
+        if (taskID > max_tasks - 1) return false;
 
         TaskNode curr = head;
 
@@ -58,7 +59,7 @@ public class NiceSimulator {
 
         if (taskID == curr.getTaskId()) return true;
 
-        while (curr.next != null) {
+        while (curr != null) {
             if (curr.getTaskId() == taskID) return true;
             curr = curr.next;
         }
@@ -223,16 +224,24 @@ public class NiceSimulator {
        range and is a currently-active task.
 
     */
-    public void renice(int taskID, int new_priority){
-        TaskNode curr = head;
-        if (curr.getTaskId() == taskID) curr.setPriority(new_priority);
 
-        else {
-            while (curr.next != null) {
+
+    public void renice(int taskID, int new_priority) {
+        if (head.getTaskId() == taskID) {
+            head.setPriority(new_priority);
+
+        } else if (tail.getTaskId() == taskID) {
+            tail.setPriority(new_priority);
+
+        } else {
+            TaskNode curr = head;
+            while (curr != null) {
                 if (curr.getTaskId() == taskID) {
                     curr.setPriority(new_priority);
                     return;
                 }
+
+                curr = curr.next;
             }
         }
     }
@@ -273,7 +282,12 @@ public class NiceSimulator {
 
         TaskNode currTask = getLowestPriority();
         currTask.decrementTimeStep();
-        if (currTask.getStepsRemaining() == 0) return currTask.getTaskId();
+        curr_time_step++;
+        if (currTask.getStepsRemaining() == 0) {
+            int temp = currTask.getTaskId();
+            kill(temp);
+            return temp;
+        }
         
         return SIMULATE_NONE_FINISHED;
     }
