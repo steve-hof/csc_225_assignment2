@@ -6,7 +6,7 @@
 
    B. Bird - 06/18/2018
 
-   Added to by Steve Hof for Assignment 2 of CSC 225
+   Added to by Steve Hof (V00320492) for Assignment 2 of CSC 225
 */
 
 
@@ -19,11 +19,13 @@ import java.util.*;
 public class NiceSimulator {
     public static final int SIMULATE_IDLE = -2;
     public static final int SIMULATE_NONE_FINISHED = -1;
+    public TaskNode[] tasks;
     public int max_tasks;
     public int curr_time_step;
-    private int size;
-    public TaskNode head;
-    public TaskNode tail;
+    public int size;
+    public int lowest_priority_value;
+    public int lowest_priority_task_id;
+    public Hashtable<Integer, Integer> task_dict;
 
     /* Constructor(maxTasks)
        Instantiate the data structure with the provided maximum
@@ -33,9 +35,13 @@ public class NiceSimulator {
          0, 1, ..., maxTasks - 1
     */
     public NiceSimulator(int maxTasks){
-        this.max_tasks = maxTasks;
+        tasks = new TaskNode[maxTasks];
+        task_dict = new Hashtable<>();
         curr_time_step = 0;
+        max_tasks = maxTasks;
         size = 0;
+        lowest_priority_value = 0;
+//        id_of_lowest_priority_task;
     }
     
 
@@ -50,21 +56,7 @@ public class NiceSimulator {
 
     */
     public boolean taskValid(int taskID){
-        if (size == 0) return false;
-        if (taskID > max_tasks - 1) return false;
-
-        TaskNode curr = head;
-
-        if (taskID < curr.getTaskId()) return false;
-
-        if (taskID == curr.getTaskId()) return true;
-
-        while (curr != null) {
-            if (curr.getTaskId() == taskID) return true;
-            curr = curr.next;
-        }
-
-        return false;
+        return task_dict.containsKey(taskID);
     }
 
     /* getPriority(taskID)
@@ -74,15 +66,8 @@ public class NiceSimulator {
 
     */
     public int getPriority(int taskID){
-        TaskNode curr = head;
-        if (curr.getTaskId() == taskID) return curr.getPriority();
-
-        while (curr.next != null) {
-            if (curr.getTaskId() == taskID) return curr.getPriority();
-            curr = curr.next;
-        }
-
-        return -1;
+        int index = task_dict.get(taskID);
+        return tasks[index].getPriority();
 
     }
 
@@ -93,36 +78,35 @@ public class NiceSimulator {
 
     */
     public int getRemaining(int taskID){
-        TaskNode curr = head;
-        while (curr.next != null) {
-            if (curr.getTaskId() == taskID) return curr.getStepsRemaining();
-            curr = curr.next;
-        }
-
-        return -1;
+        int index = task_dict.get(taskID);
+        return tasks[index].getStepsRemaining();
     }
 
-    /*
-        getCorrectPreviousNode(task_id)
-
-        Helper method for finding the correct place to insert a new
-        TaskNode
+    /* heapify(int taskID) *** helper method ***
+        perform heapify algorithm
      */
 
-    private TaskNode getCorrectPreviousNode(int task_id) {
-        if (task_id > tail.getTaskId()) return tail;
+    private void heapify(int idx) {
+//        int idx = task_dict.get(taskID);
+        TaskNode parent_task;
+        // find index of parent
+        int parent_idx = idx / 2;
 
-        TaskNode curr = head;
-        if (task_id < curr.getTaskId()) return null;
-
-        while (curr.next != null) {
-            if (task_id < curr.next.getTaskId()) return curr;
-            curr = curr.next;
+        // if parent less than children or we're at the
+        // root of the tree, weez awl dun
+        if (idx == 1 || tasks[parent_idx].getTaskId() < tasks[idx].getTaskId()) {
+            return;
         }
-        
-        // shouldn't get here
-        return null;
+        // else we need to swap the parent and the child
+        else {
+            parent_task = tasks[parent_idx];
+            tasks[parent_idx] = tasks[idx];
+            tasks[idx] = parent_task;
+        }
+
+        heapify(parent_task.getTaskId());
     }
+
     
     /* add(taskID, time_required)
        Add a task with the provided task ID and time requirement
@@ -132,52 +116,74 @@ public class NiceSimulator {
     */
     public void add(int taskID, int time_required){
         TaskNode newNode = new TaskNode(taskID, time_required);
-        TaskNode curr = head;
+        size++;
+        task_dict.put(taskID, size);
 
-        if (size == 0) {
-            head = newNode;
-            tail = newNode;
-            size++;
-            return;
-        }
+        tasks[size] = newNode;
 
-        if (size == 1) {
-            if (taskID < curr.getTaskId()) {
-                curr.prev = newNode;
-                head = newNode;
-
-            } else {
-                curr.next = newNode;
-                tail = newNode;
-
+        // Check if current_lowest_priority is less than 0
+        int new_priority_value = 0;
+        if (new_priority_value < lowest_priority_value) {
+            lowest_priority_value = new_priority_value;
+            lowest_priority_task_id = taskID;
+        } else if (new_priority_value == lowest_priority_value) {
+            if (size == 0 || size == 1) {
+                lowest_priority_task_id = taskID;
+            } else if (taskID < tasks[task_dict.get(lowest_priority_task_id)].getTaskId()) {
+                lowest_priority_task_id = taskID;
             }
-
-            size++;
-            return;
         }
-
-        TaskNode nodeBefore = getCorrectPreviousNode(taskID);
-
-        if (nodeBefore == null) {
-            head.prev = newNode;
-            newNode.next = head;
-            head = newNode;
+        heapify(task_dict.get(taskID));
+    }
 
 
-        } else if (nodeBefore.next == null) {
-            newNode.prev = nodeBefore;
-            nodeBefore.next = newNode;
-            tail = newNode;
+
+    /*
+        noKids(int idx) *** helper method that determines if task
+        has no kids
+     */
+
+    private boolean noKids(int idx) {
+        return (idx * 2) > size;
+    }
+
+
+
+    /*
+        bubbleDown(int idx) *** helper method for kill ***
+     */
+
+    private void bubbleDown(int idx) {
+        // if task is a leaf, we dun
+        if (noKids(idx)) return;
+
+        // compare kids
+        int left_child_idx = idx * 2;
+        int right_child_idx = (idx * 2) + 1;
+        int smallest_child_idx;
+
+        // check if there are two kids, otherwise must be left
+        if (right_child_idx > size - 1) {
+            smallest_child_idx = left_child_idx;
 
         } else {
-            TaskNode nextNode = nodeBefore.next;
-            nodeBefore.next = newNode;
-            newNode.prev = nodeBefore;
-            nextNode.prev = newNode;
-            newNode.next = nextNode;
+            smallest_child_idx = (tasks[left_child_idx].getTaskId() <
+                    tasks[right_child_idx].getTaskId()) ? left_child_idx : right_child_idx;
         }
 
-        size++;
+        // if parent task id is already smaller, we dun
+        if (tasks[idx].getTaskId() < tasks[smallest_child_idx].getTaskId()) return;
+
+        // Swap child with parent
+        TaskNode child_task = tasks[smallest_child_idx];
+        tasks[smallest_child_idx] = tasks[idx];
+        tasks[idx] = child_task;
+
+        // Update dictionary O(1)
+        task_dict.put(tasks[idx].getTaskId(), idx);
+        task_dict.put(tasks[smallest_child_idx].getTaskId(), smallest_child_idx);
+
+        bubbleDown(smallest_child_idx);
     }
 
     /* kill(taskID)
@@ -186,34 +192,28 @@ public class NiceSimulator {
        range and is a currently-active task.
     */
     public void kill(int taskID){
-        TaskNode curr = head;
-        
-        if (size == 1) {
-            head = null;
-            tail = null;
-            
-        } else if (taskID == head.getTaskId()) {
-            head = head.next;
-            curr.next = null;
-            head.prev = null;
-            
-        } else if (taskID == tail.getTaskId()) {
-            curr = tail.prev;
-            tail.prev = null;
-            curr.next = null;
-            tail = curr;
-            
-        } else {
-            TaskNode prev = getCorrectPreviousNode(taskID);
-            curr = prev.next;
-            TaskNode next = curr.next;
-            curr.next = null;
-            curr.prev = null;
-            prev.next = next;
-            next.prev = prev;
+        int task_to_remove_idx = task_dict.get(taskID);
+        TaskNode task_to_remove = tasks[task_to_remove_idx];
+        TaskNode last_task = tasks[size];
+        tasks[size] = null;
+        tasks[task_to_remove_idx] = last_task;
+        size = size - 1;
+
+        // if task to kill has lowest priority, must update lowest priority
+        if (lowest_priority_task_id == taskID) {
+            // find new lowest priority value
+
+            // change to ask for index instead
+//            lowest_priority_task_id = findLowestPriorityIdx();
+            int lowest_priority_idx = findLowestPriorityIdx();
+//            lowest_priority_value = tasks[task_dict.get(lowest_priority_task_id)].getPriority();
         }
 
-        size = size - 1;
+        // Remove from dictionary
+        task_dict.remove(taskID);
+
+        // Put tasks in correct order
+        bubbleDown(task_to_remove_idx);
     }
 
 
@@ -227,41 +227,36 @@ public class NiceSimulator {
 
 
     public void renice(int taskID, int new_priority) {
-        if (head.getTaskId() == taskID) {
-            head.setPriority(new_priority);
+        int idx = task_dict.get(taskID);
+        tasks[idx].setPriority(new_priority);
 
-        } else if (tail.getTaskId() == taskID) {
-            tail.setPriority(new_priority);
-
-        } else {
-            TaskNode curr = head;
-            while (curr != null) {
-                if (curr.getTaskId() == taskID) {
-                    curr.setPriority(new_priority);
-                    return;
-                }
-
-                curr = curr.next;
-            }
+        if (new_priority < lowest_priority_value) {
+            lowest_priority_value = new_priority;
+            lowest_priority_task_id = taskID;
         }
     }
 
-    /*getLowestPriority()
-        helper method to get node with lowest priority and give
-        it to simulate()
+    /*
+        findLowestPriority() *** helper method ***
+        returns the index of the task with the lowest priority
+
      */
 
-    private TaskNode getLowestPriority() {
-        TaskNode lowest = head;
-        TaskNode curr = head;
+    private int findLowestPriorityIdx() {
+        // If only one task left, return first index
+        if (size == 1) return 1;
 
-        while (curr.next != null) {
-            if (curr.next.getPriority() < lowest.getPriority()) lowest = curr.next;
+        int lowest_priority_idx = 1;
+        int curr_idx = 2;
+        do {
+            if (tasks[curr_idx].getPriority() < tasks[lowest_priority_idx].getPriority()) {
+                lowest_priority_idx = curr_idx;
+            }
+            curr_idx++;
+        } while (curr_idx <= size);
 
-            curr = curr.next;
-        }
-
-        return lowest;
+        int testaroo = tasks[lowest_priority_idx].getTaskId();
+        return lowest_priority_idx;
     }
 
     /* simulate()
@@ -278,14 +273,23 @@ public class NiceSimulator {
          - If the task did not finish, return SIMULATE_NONE_FINISHED.
     */
     public int simulate(){
+//        int temp;
         if (size == 0) return SIMULATE_IDLE;
 
-        TaskNode currTask = getLowestPriority();
-        currTask.decrementTimeStep();
+        // Find lowest priority task
+//        int curr_task_idx = findLowestPriorityIdx();
+        int curr_task_idx = task_dict.get(lowest_priority_task_id);
+//        TaskNode curr_task = tasks[curr_task_idx];
+
+        // Use up one time step
+        tasks[curr_task_idx].decrementTimeStep();
         curr_time_step++;
-        if (currTask.getStepsRemaining() == 0) {
-            int temp = currTask.getTaskId();
-            kill(temp);
+
+        // Check if task has been completed
+        if (tasks[curr_task_idx].getStepsRemaining() == 0) {
+            int temp = tasks[curr_task_idx].getTaskId();
+            kill(tasks[curr_task_idx].getTaskId());
+
             return temp;
         }
         

@@ -27,6 +27,10 @@ public class TaskNode {
         priority = new_priority;
     }
 
+    public void setTaskId(int new_task_id) {
+        task_id = new_task_id;
+    }
+
     public void decrementTimeStep() {
         steps_remaining = steps_remaining - 1;
     }

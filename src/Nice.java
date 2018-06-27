@@ -79,7 +79,6 @@ public class Nice {
 
     public static void main(String[] args){
 
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         //******************************* CHANGE BACK REMOVE BELOW THIS ****************
         BufferedReader br = null;
 
