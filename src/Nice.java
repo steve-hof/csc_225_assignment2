@@ -80,15 +80,18 @@ public class Nice {
     public static void main(String[] args){
 
         //******************************* CHANGE BACK REMOVE BELOW THIS ****************
-        BufferedReader br = null;
 
-        try {
-            File file = new File("input.txt");
-            br = new BufferedReader(new FileReader(file));
-        } catch (IOException er) {
-            er.printStackTrace();
-        }
+//        BufferedReader br = null;
+//
+//        try {
+//            File file = new File("Input_Output/input2.txt");
+//            br = new BufferedReader(new FileReader(file));
+//        } catch (IOException er) {
+//            er.printStackTrace();
+//        }
+
         //******************************* CHANGE BACK REMOVE ABOVE THIS ****************
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String nextLine = null;
 
@@ -212,6 +215,7 @@ public class Nice {
             }else{
                 System.out.printf("Time %d: Job %d finished\n",current_time,job_finished);
             }
+
 
         }
 

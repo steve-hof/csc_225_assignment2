@@ -1,10 +1,20 @@
-public class TaskNode {
-    public int task_id;
-    public int priority;
-    public int steps_remaining;
+/*
+    TaskNode.java
 
-    public TaskNode next;
-    public TaskNode prev;
+    A class to contain all aspects of a 'task' as
+    detailed in 2018 Summer CSC 225 course by Bill Bird.
+
+    Class written by Steve Hof
+
+    All methods run in constant time
+ */
+
+
+public class TaskNode {
+    private int task_id;
+    private int priority;
+    private int steps_remaining;
+
 
     public TaskNode(int task_id, int time_requirement) {
         this.task_id = task_id;
@@ -27,12 +37,18 @@ public class TaskNode {
         priority = new_priority;
     }
 
-    public void setTaskId(int new_task_id) {
-        task_id = new_task_id;
-    }
-
     public void decrementTimeStep() {
         steps_remaining = steps_remaining - 1;
     }
 
+    public boolean isLessThan(TaskNode other) {
+        if (this.getPriority() < other.getPriority()) return true;
+
+        if (this.getPriority() == other.getPriority()) {
+            return this.getTaskId() < other.getTaskId();
+
+        }
+
+        return false;
+    }
 }
