@@ -1,0 +1,40 @@
+32768
+0 add 0 5
+0 add 10 5
+0 add 100 5
+0 add 1000 5
+0 add 10000 5
+0 add 20000 5
+0 add 1001 5
+0 add 1002 5
+0 add 1003 5
+0 add 1004 5
+0 add 1005 5
+0 add 1006 5
+0 nice 0 1
+0 nice 10 1
+0 nice 100 1
+0 nice 1000 1
+0 nice 10000 1
+0 nice 20000 100
+2 add 50 20
+2 kill 10
+2 kill 100
+2 kill 20000
+4 add 10 5
+4 add 100 5
+4 renice 10 -1
+4 renice 100 -2
+5 renice 50 -5
+6 add 25 5
+6 renice 25 -50
+7 kill 25
+7 add 20000 1000
+10 nice 20000 -100
+10 kill 20000
+10 renice 10 -10
+20 kill 50
+55 add 1001 5
+55 add 999 5
+55 nice 1001 1
+55 nice 999 1

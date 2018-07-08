@@ -2,43 +2,30 @@
    CSC 225 - Summer 2018
 
    An empty shell of the operations needed by the NiceSimulator
-   data structure by B. Bird - 06/18/2018
+   data structure.
+
+   B. Bird - 06/18/2018
 
    Added to by Steve Hof (V00320492) for Assignment 2 of CSC 225
-
-   All methods implemented at the prescribed time complexity
 */
 
-/*
-    *************** NOTE FOR FIXING ********************
-    * It appears that my algorithm has trouble killing a
-    * task when that task happens to be at the bottom of
-    * the queue
-    * **************************************************
-    *
-    * It appears that, while the priority ordering seems
-    * to be working, the taskIDs don't always seem to be
-    * in order. The top element seems to work, but the
-    * rest don't seem to be in order
-    *
-    * It seems to be a problem with heapify
-    * **************************************************
- */
 
-//import javafx.concurrent.Task;
-//
-//import java.io.*;
-//import java.util.*;
+import javafx.concurrent.Task;
+
+import java.io.*;
+import java.util.*;
 
 
 public class NiceSimulator {
     public static final int SIMULATE_IDLE = -2;
     public static final int SIMULATE_NONE_FINISHED = -1;
-    private TaskNode[] tasks;
-    private int max_tasks;
-    private int curr_time_step;
-    private int size;
-    private int[] lookup_table;
+    public TaskNode[] tasks;
+    public int max_tasks;
+    public int curr_time_step;
+    public int size;
+    public int lowest_priority_value;
+    public int lowest_priority_task_id;
+    public Hashtable<Integer, Integer> task_dict;
 
     /* Constructor(maxTasks)
        Instantiate the data structure with the provided maximum
@@ -49,12 +36,12 @@ public class NiceSimulator {
     */
     public NiceSimulator(int maxTasks){
         tasks = new TaskNode[maxTasks];
+        task_dict = new Hashtable<>();
         curr_time_step = 0;
         max_tasks = maxTasks;
         size = 0;
-
-        // maps taskID : task index
-        lookup_table = new int[maxTasks];
+        lowest_priority_value = 0;
+//        id_of_lowest_priority_task;
     }
     
 
@@ -67,14 +54,9 @@ public class NiceSimulator {
        the ID is outside the valid range 0, 1, ..., maxTasks - 1
        of task indices.
 
-       O(1)
     */
     public boolean taskValid(int taskID){
-        if (taskID < 0 || taskID >= max_tasks) return false;
-
-        if (lookup_table[taskID] != 0) return true;
-
-        return false;
+        return task_dict.containsKey(taskID);
     }
 
     /* getPriority(taskID)
@@ -82,10 +64,9 @@ public class NiceSimulator {
        task ID. You may assume that the task ID provided
        is valid.
 
-       O(1)
     */
     public int getPriority(int taskID){
-        int index = lookup_table[taskID];
+        int index = task_dict.get(taskID);
         return tasks[index].getPriority();
 
     }
@@ -95,62 +76,35 @@ public class NiceSimulator {
        remaining before the task completes. You may assume
        that the task ID provided is valid.
 
-       O(1)
     */
     public int getRemaining(int taskID){
-        int index = lookup_table[taskID];
+        int index = task_dict.get(taskID);
         return tasks[index].getStepsRemaining();
     }
 
-
     /* heapify(int taskID) *** helper method ***
-        performs heapify algorithm learned in class
-        as well as keeping the lookup table up to
-        date.
-
-        Algorithm is performed on complete trees, so
-        the height is within one of log(n). Since
-        none of the operations in the algorithm depend
-        on n, heapify runs in
-
-        O(log(n))
+        perform heapify algorithm
      */
 
     private void heapify(int idx) {
-        if (size == 1) {
-            return;
-        }
-
+//        int idx = task_dict.get(taskID);
         TaskNode parent_task;
         // find index of parent
         int parent_idx = idx / 2;
 
         // if parent less than children or we're at the
         // root of the tree, weez awl dun
-//        if (idx == 1 || tasks[parent_idx].isLessThan(tasks[idx])) {
-//            return;
-//        }
-
-        if (parent_idx == 0) {
-            bubbleDown(idx);
+        if (idx == 1 || tasks[parent_idx].getTaskId() < tasks[idx].getTaskId()) {
             return;
         }
-        if (tasks[parent_idx].isLessThan(tasks[idx])) return;
-
         // else we need to swap the parent and the child
         else {
             parent_task = tasks[parent_idx];
-            int old_parent_task_id = parent_task.getTaskId();
-            int old_child_task_id = tasks[idx].getTaskId();
-
             tasks[parent_idx] = tasks[idx];
             tasks[idx] = parent_task;
-
-            lookup_table[old_child_task_id] = parent_idx;
-            lookup_table[old_parent_task_id] = idx;
         }
 
-        heapify(parent_idx);
+        heapify(parent_task.getTaskId());
     }
 
     
@@ -159,44 +113,44 @@ public class NiceSimulator {
        to the system. You may assume that the provided task ID is in
        the correct range and is not a currently-active task.
        The new task will be assigned nice level 0.
-
-       All the operations run in constant time and heapify (mentioned
-       above) runs in O(log(n)), therefore, add runs in
-
-       O(log(n))
     */
     public void add(int taskID, int time_required){
         TaskNode newNode = new TaskNode(taskID, time_required);
         size++;
+        task_dict.put(taskID, size);
 
         tasks[size] = newNode;
-        lookup_table[taskID] = size;
 
-        heapify(size);
+        // Check if current_lowest_priority is less than 0
+        int new_priority_value = 0;
+        if (new_priority_value < lowest_priority_value) {
+            lowest_priority_value = new_priority_value;
+            lowest_priority_task_id = taskID;
+        } else if (new_priority_value == lowest_priority_value) {
+            if (size == 0 || size == 1) {
+                lowest_priority_task_id = taskID;
+            } else if (taskID < tasks[task_dict.get(lowest_priority_task_id)].getTaskId()) {
+                lowest_priority_task_id = taskID;
+            }
+        }
+        heapify(task_dict.get(taskID));
     }
+
 
 
     /*
         noKids(int idx) *** helper method that determines if task
         has no kids
-
-        O(1)
      */
+
     private boolean noKids(int idx) {
         return (idx * 2) > size;
     }
 
 
+
     /*
         bubbleDown(int idx) *** helper method for kill ***
-
-        Running time can be explained as similar to heapify (above).
-        None of the individual operations depend on n, and
-        the height of the tree is within a constant of log(n).
-        Since the algorithm moves down the tree and not side to
-        side, the number of operations is the height
-
-        O(log(n))
      */
 
     private void bubbleDown(int idx) {
@@ -209,33 +163,25 @@ public class NiceSimulator {
         int smallest_child_idx;
 
         // check if there are two kids, otherwise must be left
-//        if (right_child_idx > size - 1) {
-//            smallest_child_idx = left_child_idx;
-
-            if (right_child_idx > size) {
+        if (right_child_idx > size - 1) {
             smallest_child_idx = left_child_idx;
 
         } else {
-            // determine which child is smaller
-
-            smallest_child_idx = (tasks[left_child_idx].isLessThan(tasks[right_child_idx])) ? left_child_idx : right_child_idx;
+            smallest_child_idx = (tasks[left_child_idx].getTaskId() <
+                    tasks[right_child_idx].getTaskId()) ? left_child_idx : right_child_idx;
         }
 
-        // if parent is already smaller, we dun
-        if (tasks[idx].isLessThan(tasks[smallest_child_idx])) return;
+        // if parent task id is already smaller, we dun
+        if (tasks[idx].getTaskId() < tasks[smallest_child_idx].getTaskId()) return;
 
         // Swap child with parent
         TaskNode child_task = tasks[smallest_child_idx];
-        TaskNode parent_task = tasks[idx];
-        int parent_taskId = parent_task.getTaskId();
-        int child_taskId = child_task.getTaskId();
-
         tasks[smallest_child_idx] = tasks[idx];
         tasks[idx] = child_task;
 
-        // Update lookup table
-        lookup_table[parent_taskId] = smallest_child_idx;
-        lookup_table[child_taskId] = idx;
+        // Update dictionary O(1)
+        task_dict.put(tasks[idx].getTaskId(), idx);
+        task_dict.put(tasks[smallest_child_idx].getTaskId(), smallest_child_idx);
 
         bubbleDown(smallest_child_idx);
     }
@@ -244,37 +190,28 @@ public class NiceSimulator {
        Delete the task with the provided task ID from the system.
        You may assume that the provided task ID is in the correct
        range and is a currently-active task.
-
-
     */
     public void kill(int taskID){
-        // get index of task to kill (in the heap array)
-        int task_to_remove_idx = lookup_table[taskID];
-        if (task_to_remove_idx == 0) return;
-
-        // create a pointer to the last task in the heap array
+        int task_to_remove_idx = task_dict.get(taskID);
+        TaskNode task_to_remove = tasks[task_to_remove_idx];
         TaskNode last_task = tasks[size];
-
-        // if the taskID to kill is the same as the taskID of the
-        // last element in the array, simply remove the last element
-
-        if (taskID == last_task.getTaskId()) {
-            tasks[size] = null;
-            lookup_table[taskID] = 0;
-            size = size - 1;
-            return;
-        }
-
-        // remove the last task
         tasks[size] = null;
-
-        // put the last task at the index of the element to remove
         tasks[task_to_remove_idx] = last_task;
-        lookup_table[taskID] = task_to_remove_idx;
         size = size - 1;
 
-        lookup_table[taskID] = 0;
-        lookup_table[last_task.getTaskId()] = task_to_remove_idx;
+        // if task to kill has lowest priority, must update lowest priority
+        if (lowest_priority_task_id == taskID) {
+            // find new lowest priority value
+
+            // change to ask for index instead
+//            lowest_priority_task_id = findLowestPriorityIdx();
+            int lowest_priority_idx = findLowestPriorityIdx();
+//            lowest_priority_value = tasks[task_dict.get(lowest_priority_task_id)].getPriority();
+        }
+
+        // Remove from dictionary
+        task_dict.remove(taskID);
+
         // Put tasks in correct order
         bubbleDown(task_to_remove_idx);
     }
@@ -286,20 +223,41 @@ public class NiceSimulator {
        You may assume that the provided task ID is in the correct
        range and is a currently-active task.
 
-       Because of the lookup table, finding the task to re-nice takes
-       constant time. Heapify and bubbleDown both take O(log(n)) as previously
-       described.
-
-       O(log(n))
     */
 
+
     public void renice(int taskID, int new_priority) {
-        int idx = lookup_table[taskID];
+        int idx = task_dict.get(taskID);
         tasks[idx].setPriority(new_priority);
-        heapify(idx);
-        bubbleDown(idx);
+
+        if (new_priority < lowest_priority_value) {
+            lowest_priority_value = new_priority;
+            lowest_priority_task_id = taskID;
+        }
     }
 
+    /*
+        findLowestPriority() *** helper method ***
+        returns the index of the task with the lowest priority
+
+     */
+
+    private int findLowestPriorityIdx() {
+        // If only one task left, return first index
+        if (size == 1) return 1;
+
+        int lowest_priority_idx = 1;
+        int curr_idx = 2;
+        do {
+            if (tasks[curr_idx].getPriority() < tasks[lowest_priority_idx].getPriority()) {
+                lowest_priority_idx = curr_idx;
+            }
+            curr_idx++;
+        } while (curr_idx <= size);
+
+        int testaroo = tasks[lowest_priority_idx].getTaskId();
+        return lowest_priority_idx;
+    }
 
     /* simulate()
        Run one step of the simulation:
@@ -313,31 +271,28 @@ public class NiceSimulator {
            being run for one step). If the task now requires 0 units of time,
            it has finished, so remove it from the system and return its task ID.
          - If the task did not finish, return SIMULATE_NONE_FINISHED.
-
-         - None of the methods depend on n but the kill method that is called
-           is O(log(n)) (as described above)
-
-           O(log(n))
     */
     public int simulate(){
+//        int temp;
         if (size == 0) return SIMULATE_IDLE;
 
-
-        // Lowest priority task is always at index 1
-        int curr_task_idx = 1;
+        // Find lowest priority task
+//        int curr_task_idx = findLowestPriorityIdx();
+        int curr_task_idx = task_dict.get(lowest_priority_task_id);
+//        TaskNode curr_task = tasks[curr_task_idx];
 
         // Use up one time step
         tasks[curr_task_idx].decrementTimeStep();
         curr_time_step++;
 
         // Check if task has been completed
-        if (tasks[curr_task_idx].getStepsRemaining() <= 0) {
+        if (tasks[curr_task_idx].getStepsRemaining() == 0) {
             int temp = tasks[curr_task_idx].getTaskId();
             kill(tasks[curr_task_idx].getTaskId());
 
             return temp;
         }
-
+        
         return SIMULATE_NONE_FINISHED;
     }
 }

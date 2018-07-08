@@ -81,17 +81,17 @@ public class Nice {
 
         //******************************* CHANGE BACK REMOVE BELOW THIS ****************
 
-//        BufferedReader br = null;
-//
-//        try {
-//            File file = new File("Input_Output/input2.txt");
-//            br = new BufferedReader(new FileReader(file));
-//        } catch (IOException er) {
-//            er.printStackTrace();
-//        }
+        BufferedReader br = null;
+
+        try {
+            File file = new File("Input_Output/peer_input/input_1682.txt");
+            br = new BufferedReader(new FileReader(file));
+        } catch (IOException er) {
+            er.printStackTrace();
+        }
 
         //******************************* CHANGE BACK REMOVE ABOVE THIS ****************
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String nextLine = null;
 

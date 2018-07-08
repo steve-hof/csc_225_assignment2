@@ -1,0 +1,13 @@
+Time 0: Adding task 8 (time remaining 1)
+Time 0: Job 8 finished
+Time 1: Adding task 0 (time remaining 2)
+Time 2: Renicing task 0 (old priority 0, new priority -1, time remaining 1)
+Time 2: Job 0 finished
+Time 3: Adding task 0 (time remaining 11)
+Time 3: Renicing task 0 (old priority 0, new priority -2, time remaining 11)
+Time 5: Adding task 8 (time remaining 100000)
+Time 13: Job 0 finished
+Time 69: Adding task 5 (time remaining 3)
+Time 71: Job 5 finished
+Time 80085: Killing task 8 (priority 0, time remaining 19932)
+Time 80085: CPU Idle (ending simulation)

@@ -1,0 +1,60 @@
+Time 0: Adding task 12 (time remaining 24)
+Time 8: Renicing task 12 (old priority 0, new priority 0, time remaining 16)
+Time 12: Adding task 200 (time remaining 10000)
+Time 12: Renicing task 200 (old priority 0, new priority 39, time remaining 10000)
+Time 23: Job 12 finished
+Time 8000: Adding task 12000 (time remaining 4000)
+Time 9000: Adding task 123 (time remaining 200)
+Time 9000: Adding task 234 (time remaining 199)
+Time 9008: Adding task 500 (time remaining 1000)
+Time 9010: Adding task 499 (time remaining 1000)
+Time 9020: Adding task 498 (time remaining 100)
+Time 9021: Adding task 497 (time remaining 100)
+Time 9022: Adding task 496 (time remaining 100)
+Time 9023: Adding task 495 (time remaining 100)
+Time 9033: Adding task 494 (time remaining 100)
+Time 9034: Adding task 493 (time remaining 100)
+Time 9075: Adding task 492 (time remaining 100)
+Time 9075: Renicing task 500 (old priority 0, new priority -2, time remaining 1000)
+Time 9085: Adding task 491 (time remaining 100)
+Time 9086: Adding task 490 (time remaining 100)
+Time 9090: Adding task 489 (time remaining 100)
+Time 9098: Adding task 488 (time remaining 100)
+Time 9101: Renicing task 498 (old priority 0, new priority 3, time remaining 100)
+Time 9103: Renicing task 497 (old priority 0, new priority -10, time remaining 100)
+Time 9109: Renicing task 496 (old priority 0, new priority 100, time remaining 100)
+Time 9111: Renicing task 495 (old priority 0, new priority 10, time remaining 100)
+Time 9112: Renicing task 494 (old priority 0, new priority 10, time remaining 100)
+Time 9120: Renicing task 493 (old priority 0, new priority 1, time remaining 100)
+Time 9130: Renicing task 492 (old priority 0, new priority 100, time remaining 100)
+Time 9131: Renicing task 491 (old priority 0, new priority 100, time remaining 100)
+Time 9139: Renicing task 490 (old priority 0, new priority 85, time remaining 100)
+Time 9177: Renicing task 489 (old priority 0, new priority 12, time remaining 100)
+Time 9188: Renicing task 488 (old priority 0, new priority -20, time remaining 100)
+Time 9199: Renicing task 500 (old priority -2, new priority 10, time remaining 972)
+Time 9199: Renicing task 123 (old priority 0, new priority 100, time remaining 125)
+Time 9200: Renicing task 499 (old priority 0, new priority 10, time remaining 1000)
+Time 9287: Job 488 finished
+Time 9302: Job 497 finished
+Time 9501: Job 234 finished
+Time 11000: Adding task 1212 (time remaining 87)
+Time 11080: Renicing task 12000 (old priority 0, new priority 10, time remaining 1502)
+Time 11086: Job 1212 finished
+Time 11186: Job 493 finished
+Time 11286: Job 498 finished
+Time 11386: Job 494 finished
+Time 11486: Job 495 finished
+Time 12000: Renicing task 12000 (old priority 10, new priority -1, time remaining 1502)
+Time 12009: Adding task 999 (time remaining 8000)
+Time 13000: Killing task 999 (priority 0, time remaining 8000)
+Time 13501: Job 12000 finished
+Time 13988: Job 499 finished
+Time 14960: Job 500 finished
+Time 15060: Job 489 finished
+Time 17084: Job 200 finished
+Time 17109: Killing task 123 (priority 100, time remaining 125)
+Time 17175: Killing task 490 (priority 85, time remaining 10)
+Time 17274: Job 491 finished
+Time 17374: Job 492 finished
+Time 17474: Job 496 finished
+Time 17475: CPU Idle (ending simulation)

@@ -1,0 +1,6 @@
+20
+0 add 19 7
+3 renice 19 -8
+7 add 19 6
+7 add 3 10
+8 renice 3 3

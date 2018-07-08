@@ -1,0 +1,53 @@
+Time 0: Adding task 0 (time remaining 5)
+Time 0: Adding task 10 (time remaining 5)
+Time 0: Adding task 100 (time remaining 5)
+Time 0: Adding task 1000 (time remaining 5)
+Time 0: Adding task 10000 (time remaining 5)
+Time 0: Adding task 20000 (time remaining 5)
+Time 0: Adding task 1001 (time remaining 5)
+Time 0: Adding task 1002 (time remaining 5)
+Time 0: Adding task 1003 (time remaining 5)
+Time 0: Adding task 1004 (time remaining 5)
+Time 0: Adding task 1005 (time remaining 5)
+Time 0: Adding task 1006 (time remaining 5)
+Time 0: Renicing task 0 (old priority 0, new priority 1, time remaining 5)
+Time 0: Renicing task 10 (old priority 0, new priority 1, time remaining 5)
+Time 0: Renicing task 100 (old priority 0, new priority 1, time remaining 5)
+Time 0: Renicing task 1000 (old priority 0, new priority 1, time remaining 5)
+Time 0: Renicing task 10000 (old priority 0, new priority 1, time remaining 5)
+Time 0: Renicing task 20000 (old priority 0, new priority 100, time remaining 5)
+Time 2: Adding task 50 (time remaining 20)
+Time 2: Killing task 10 (priority 1, time remaining 5)
+Time 2: Killing task 100 (priority 1, time remaining 5)
+Time 2: Killing task 20000 (priority 100, time remaining 5)
+Time 4: Adding task 10 (time remaining 5)
+Time 4: Adding task 100 (time remaining 5)
+Time 4: Renicing task 10 (old priority 0, new priority -1, time remaining 5)
+Time 4: Renicing task 100 (old priority 0, new priority -2, time remaining 5)
+Time 5: Renicing task 50 (old priority 0, new priority -5, time remaining 18)
+Time 6: Adding task 25 (time remaining 5)
+Time 6: Renicing task 25 (old priority 0, new priority -50, time remaining 5)
+Time 7: Killing task 25 (priority -50, time remaining 4)
+Time 7: Adding task 20000 (time remaining 1000)
+Time 10: Renicing task 20000 (old priority 0, new priority -100, time remaining 1000)
+Time 10: Killing task 20000 (priority -100, time remaining 1000)
+Time 10: Renicing task 10 (old priority -1, new priority -10, time remaining 5)
+Time 14: Job 10 finished
+Time 20: Killing task 50 (priority -5, time remaining 9)
+Time 23: Job 100 finished
+Time 26: Job 1001 finished
+Time 31: Job 1002 finished
+Time 36: Job 1003 finished
+Time 41: Job 1004 finished
+Time 46: Job 1005 finished
+Time 51: Job 1006 finished
+Time 55: Adding task 1001 (time remaining 5)
+Time 55: Adding task 999 (time remaining 5)
+Time 55: Renicing task 1001 (old priority 0, new priority 1, time remaining 5)
+Time 55: Renicing task 999 (old priority 0, new priority 1, time remaining 5)
+Time 56: Job 0 finished
+Time 61: Job 999 finished
+Time 66: Job 1000 finished
+Time 71: Job 1001 finished
+Time 76: Job 10000 finished
+Time 77: CPU Idle (ending simulation)

@@ -1,0 +1,15 @@
+32273
+0 add 6 3
+0 add 3 5
+0 add 8 3
+0 add 1 9
+0 add 58 21
+0 renice 58 -1
+0 renice 3 100
+7 kill 58
+10 add 213 5
+13 add 225 10
+15 add 230 22
+30 add 300 200
+35 renice 300 -1
+50 kill 300

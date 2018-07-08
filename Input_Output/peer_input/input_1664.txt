@@ -1,0 +1,22 @@
+3500
+0 add 6 5
+0 renice 6 2
+0 add 3 4
+0 renice 3 3
+1 add 5 4
+1 renice 5 3
+13 add 6 5
+13 renice 6 2
+13 add 3499 5
+13 add 1 8
+13 add 7 5
+13 renice 7 2
+14 kill 7
+15 add 7 5
+15 renice 7 2
+16 kill 6
+16 add 6 5
+16 renice 6 2
+17 kill 3499
+17 add 3499 5
+18 kill 1
