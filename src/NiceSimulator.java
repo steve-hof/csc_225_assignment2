@@ -9,28 +9,6 @@
    All methods implemented at the prescribed time complexity
 */
 
-/*
-    *************** NOTE FOR FIXING ********************
-    * It appears that my algorithm has trouble killing a
-    * task when that task happens to be at the bottom of
-    * the queue
-    * **************************************************
-    *
-    * It appears that, while the priority ordering seems
-    * to be working, the taskIDs don't always seem to be
-    * in order. The top element seems to work, but the
-    * rest don't seem to be in order
-    *
-    * It seems to be a problem with heapify
-    * **************************************************
- */
-
-//import javafx.concurrent.Task;
-//
-//import java.io.*;
-//import java.util.*;
-
-
 public class NiceSimulator {
     public static final int SIMULATE_IDLE = -2;
     public static final int SIMULATE_NONE_FINISHED = -1;
@@ -125,12 +103,6 @@ public class NiceSimulator {
         // find index of parent
         int parent_idx = idx / 2;
 
-        // if parent less than children or we're at the
-        // root of the tree, weez awl dun
-//        if (idx == 1 || tasks[parent_idx].isLessThan(tasks[idx])) {
-//            return;
-//        }
-
         if (parent_idx == 0) {
             bubbleDown(idx);
             return;
@@ -209,15 +181,11 @@ public class NiceSimulator {
         int smallest_child_idx;
 
         // check if there are two kids, otherwise must be left
-//        if (right_child_idx > size - 1) {
-//            smallest_child_idx = left_child_idx;
-
-            if (right_child_idx > size) {
-            smallest_child_idx = left_child_idx;
+        if (right_child_idx > size) {
+        smallest_child_idx = left_child_idx;
 
         } else {
             // determine which child is smaller
-
             smallest_child_idx = (tasks[left_child_idx].isLessThan(tasks[right_child_idx])) ? left_child_idx : right_child_idx;
         }
 

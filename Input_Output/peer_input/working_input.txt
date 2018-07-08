@@ -1,0 +1,21 @@
+8192
+0 add 1 20
+0 add 12 10
+0 add 256 20
+0 add 512 20
+0 add 64 20
+0 add 6 20
+0 add 2 20
+0 add 3 20
+0 add 8 10
+1 renice 64 -1
+
+2 renice 256 -2
+
+3 renice 12 -3
+4 add 24 20
+
+5 kill 3
+
+5 kill 1
+
